@@ -1,0 +1,22 @@
+@import 'plyr/src/sass/plyr';
+
+.plyr {
+	&--video {
+		@apply rounded-lg;
+		--plyr-control-spacing: 16px;
+	}
+
+	// fix for youtube, when clicking on the video, but not the play button
+	// it plays, but stops right away
+	&__control--overlaid {
+		&:before {
+			content: '';
+			position: absolute;
+			left: -100vw;
+			top: -100vw;
+			width: 200vw;
+			height: 200vw;
+		}
+	}
+}
+

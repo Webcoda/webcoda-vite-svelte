@@ -1,0 +1,14 @@
+.o-gotop {
+	width: 56px;
+	height: 56px;
+	transition: .3s;
+	color: #fff;
+	&:hover,
+	&:focus {
+		background-color: grey;
+		color: #fff;
+	}
+	&__icon {
+		line-height: 56px;
+	}
+}

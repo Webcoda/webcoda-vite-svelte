@@ -1,0 +1,8 @@
+.o-baseimg {
+	&__lqip {
+		filter: blur(5px);
+		.is-lazysizes-loaded ~ & {
+			opacity: 0;
+		}
+	}
+}

@@ -1,0 +1,87 @@
+/* crit:start */
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6
+{
+	@apply text-black;
+}
+
+@responsive {
+	h1, .h1 {
+		@apply font-heading;
+		@apply font-bold;
+		@apply text-h2;
+		@screen sm {
+			@apply text-h1;
+		}
+	}
+
+	h2, .h2 {
+		@apply font-heading;
+		@apply font-bold;
+		@apply text-h3;
+		@screen sm {
+			@apply text-h2;
+		}
+	}
+
+	h3, .h3 {
+		@apply font-heading;
+		@apply font-bold;
+		@apply text-h4;
+		@screen sm {
+			@apply text-h3;
+		}
+	}
+
+	h4, .h4 {
+		@apply font-heading;
+		@apply font-bold;
+		@apply text-h5;
+		@screen sm {
+			@apply text-h4;
+		}
+	}
+
+	h5, .h5 {
+		@apply font-heading;
+		@apply font-bold;
+		@apply text-h6;
+		@screen sm {
+			@apply text-h5;
+		}
+	}
+
+	h6, .h6 {
+		@apply font-heading;
+		@apply font-bold;
+		@apply text-h6-mobile;
+		@screen sm {
+			@apply text-h6;
+		}
+	}
+}
+
+blockquote {
+    @include fsblockquote;
+}
+
+p {
+    &:empty {
+        display: none;
+    }
+}
+
+small {
+    @include fssmall;
+}
+
+label {
+	@include fslabel;
+	margin-bottom: 0;
+}
+
+figcaption,
+caption {
+	@apply text-sm;
+	font-style: italic;
+}

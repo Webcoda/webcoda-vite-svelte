@@ -1,0 +1,10 @@
+.o-inputbox {
+	$_this: &;
+	&__check {
+		&-tick {
+			input:checked ~ #{$_this}__check & {
+				opacity: 1;
+			}
+		}
+	}
+}

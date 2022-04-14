@@ -1,0 +1,13 @@
+@tailwind base;
+@import-glob "03_generic/**/*";
+@import-glob "04_base/**/*";
+
+@tailwind components;
+
+@import-glob "05_utilities/**/*";
+
+@tailwind utilities;
+@tailwind variants;
+
+@import-glob "06_objects/**/*";
+@import-glob "07_components/**/*";

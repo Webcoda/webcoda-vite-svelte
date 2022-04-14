@@ -1,0 +1,32 @@
+/*! purgecss start ignore */
+.field-validation-error {
+	display: block;
+	color: #fff;
+	@apply text-xs;
+	@apply bg-error;
+	@apply font-bold;
+	@apply text-center;
+	@apply py-0.5;
+	@apply px-3;
+
+	.c-checkboxlist-tiles + & {
+		@apply mt-2;
+	}
+}
+
+.input-validation-error {
+	@apply border-error;
+}
+
+.umbraco-forms-page {
+	.o-collapselist__content .umbraco-forms-bootstrap3-horizontal & {
+		padding: 0;
+	}
+}
+
+.umbraco-forms-form {
+	.o-richtext > & {
+		@apply my-14 sm:my-20 first:mt-0 last:mb-0;
+	}
+}
+/*! purgecss end ignore */

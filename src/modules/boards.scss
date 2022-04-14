@@ -1,0 +1,38 @@
+/*! purgecss start ignore */
+.boards {
+	$_this: &;
+	&__panel {
+		.is-rowactive & {
+			opacity: .5;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			&.active {
+				opacity: 1;
+			}
+		}
+
+		[data-col="0"] & {
+			padding-top: 0;
+			border-top: 0;
+		}
+
+		[data-col="1"] & {
+			@screen sm {
+				padding-top: 0;
+				border-top: 0;
+			}
+		}
+
+		&-img-active-indicator {
+			box-shadow: inset 0 0 0 4px blue;
+
+			#{$_this}__panel:hover & {
+				opacity: 1;
+			}
+		}
+	}
+}
+/*! purgecss end ignore */

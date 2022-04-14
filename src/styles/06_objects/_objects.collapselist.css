@@ -1,0 +1,16 @@
+.o-collapselist {
+	$_this: &;
+	&__content.o-richtext {
+		> * + * {
+			@apply mt-3;
+		}
+	}
+
+	&__title{
+		&-link {
+			#{$_this}__item:first-child & {
+				padding-top: 0;
+			}
+		}
+	}
+}

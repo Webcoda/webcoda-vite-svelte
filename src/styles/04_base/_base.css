@@ -1,0 +1,193 @@
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+:root {
+	--viewport-height: 100vh;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/* crit:start */
+
+*,
+*:before,
+*:after {
+    flex: 0 1 auto;
+    border: 0 solid theme('borderColor.DEFAULT');
+}
+*:focus {
+	outline: 1px dotted currentColor;
+}
+
+html {
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-overflow-style: scrollbar;
+	letter-spacing: .01px; //fix [BH-36]
+    &.is-menu-active {
+		@apply overflow-hidden lg:overflow-visible;
+    }
+}
+
+fieldset {
+    margin: 0;
+	padding: 0;
+	border: 0 solid theme('borderColor.DEFAULT');
+}
+
+input {
+	&[type=text], &[type=search] {
+		appearance: none;
+	}
+
+	@apply px-4;
+	@apply py-[11px];
+    border-radius: 0;
+    box-sizing: border-box;
+	width: 100%;
+	border: 1px solid $border;
+	min-height: 48px;
+	box-shadow: none;
+	border-radius: 3px;
+
+	@screen md {
+		// @apply text-base;
+	}
+
+    &:focus {
+		@apply border-grey-900;
+		outline: 0;
+        background-color: #fff;
+    }
+    &:invalid {
+        // remove red border on invalid input on mozilla
+        box-shadow: none;
+        /* crit */
+    }
+    &::placeholder {
+        @apply text-grey-900/50;
+        /* crit */
+    }
+    &.input-validation-error {
+        @apply border-error;
+		border-width: 2px;
+		&:focus {
+			outline: 0;
+		}
+    }
+    &::-ms-clear {
+        display: none;
+	}
+}
+
+select,
+textarea {
+	@apply text-sm;
+    // Prevent ios default box shadow and radius
+    appearance: none;
+    border-radius: 0;
+    display: block;
+    padding: 11px 18px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid $border;
+
+	@screen md {
+		@apply text-base;
+	}
+
+    &:disabled {
+        opacity: 0.5;
+    }
+    &:focus {
+		outline: 1px solid theme('colors.grey.900');
+		@apply border-grey-900;
+        background-color: #fff;
+    }
+	&.input-validation-error {
+        @apply border-error;
+		border-width: 2px;
+		&:focus {
+			outline: 0;
+		}
+    }
+}
+
+select {
+    background: #fff url('@@/icons/arrow-down24.svg') calc(100% - 16px) 50% no-repeat;
+    background-size: 24px auto;
+    padding-right: 16px + 24px + 16px;
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+    resize: vertical;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/**
+ * Removes the default spacing and border for appropriate elements.
+ */
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+    margin: 0;
+}
+
+button {
+    background: transparent;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    margin: 48px 0;
+}
+
+
+/* crit:end */
+
+[v-cloak] {
+    display: none
+}

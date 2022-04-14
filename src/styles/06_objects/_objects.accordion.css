@@ -1,0 +1,6 @@
+.o-accordion{
+    &__timeline {
+        border-right: 3px dotted;
+        left: 10px;
+    }
+}

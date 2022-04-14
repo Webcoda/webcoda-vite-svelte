@@ -1,0 +1,7 @@
+.o-tabs {
+	&__content.o-richtext {
+		> * + * {
+			@apply mt-3;
+		}
+	}
+}

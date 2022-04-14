@@ -1,0 +1,42 @@
+/*! purgecss start ignore */
+@import "./plyr.scss";
+.mfp-inline-holder {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    .mfp-close {
+        color: #FFF;
+        text-align: right;
+		position: fixed;
+		top: 8px;
+		right: 8px;
+		width: 32px;
+		height: 32px;
+		overflow: hidden;
+		@screen md {
+			top: 24px;
+			right: 24px;
+		}
+		&:before {
+			content: '';
+			background-image: url('@/img/close32-white.svg');
+			background-size: 32px 32px;
+			background-position: center center;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+    }
+}
+
+.mfp-content {
+    max-width: 900px;
+}
+
+.plyr video {
+    object-fit: cover;
+}
+
+.plyr__poster {
+	pointer-events: none;
+}
+/*! purgecss end ignore */

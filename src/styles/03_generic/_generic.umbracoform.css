@@ -1,0 +1,4 @@
+.field-validation-error {
+	@apply text-sm;
+	@apply text-error;
+}

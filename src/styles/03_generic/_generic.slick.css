@@ -1,0 +1,130 @@
+/* // Default Variables
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+$slick-font-path: '~slick-carousel/slick/fonts/';
+$slick-loader-path: '~slick-carousel/slick/';
+$slick-arrow-color: white;
+$slick-dot-color: black;
+$slick-dot-color-active: $slick-dot-color;
+$slick-prev-character: '\2190';
+$slick-next-character: '\2192';
+$slick-dot-character: '\2022';
+$slick-dot-size: 6px;
+$slick-opacity-default: 0.75;
+$slick-opacity-on-hover: 1;
+$slick-opacity-not-active: 0.25; */
+
+/*! purgecss start ignore */
+
+/* @import '~slick-carousel/slick/slick.scss';
+@import '~slick-carousel/slick/slick-theme.scss';
+// ==========================================================================
+// Override so that don't need to use assets from slick
+// ==========================================================================
+.slick {
+    $_this: &;
+
+    // {{ .slick-slider }}
+    &-slider {
+		opacity: 0;
+		&.slick-initialized {
+			opacity: 1;
+		}
+        @include mq(md) {
+            user-select: initial;
+        }
+
+		&.slick-dotted {
+			@apply mb-0;
+		}
+    }
+    // {{ .slick-slide }}
+    &-slide {
+        height: auto;
+        flex: 1;
+        outline: 0;
+        &--video {
+            .is-IE & {
+                display: block;
+                float: none;
+                opacity: 0;
+            }
+            .is-IE .slick-initialized & {
+                opacity: 1;
+            }
+        }
+    }
+    // {{ .slick-track }}
+    &-track {
+        display: flex;
+        &:before {
+            content: none;
+        }
+    }
+    // {{ .slick-list }}
+    &-list {
+        #{$_this}-loading & {
+            background: #fff 50% no-repeat;
+        }
+    }
+    &-dots {
+		@apply relative bottom-0 text-left flex gap-2;
+		li {
+			@apply m-0;
+			width: auto;
+			height: auto;
+			button {
+				width: auto;
+				height: auto;
+				padding: 0;
+				&:before {
+					content: none;
+				}
+			}
+		}
+    }
+	// {{ .slick-arrow }}
+	&-arrow {
+		.c-module--slider &{
+			@apply bg-grey-900;
+			@apply w-12;
+			@apply h-12;
+			z-index: 1;
+			opacity: 1;
+
+			&:hover {
+				@apply bg-blue-500;
+			}
+
+			&:before {
+				content: '';
+				display: block;
+				background-size: 100%;
+				@apply w-5;
+				@apply h-5;
+				@apply mx-auto;
+			}
+		}
+	}
+	// {{ .slick-prev }}
+	&-prev {
+	}
+	// {{ .slick-next }}
+	&-next {
+	}
+}
+
+.timerdotsslider {
+	&__progressrect {
+		@apply scale-x-0;
+		transition: 0s;
+		.slick-active & {
+			@apply scale-x-100;
+			transition: var(--slick-autoplay-speed, 5s) linear;
+		}
+	}
+} */
+
+/*! purgecss end ignore */

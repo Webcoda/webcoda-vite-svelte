@@ -1,0 +1,186 @@
+.u {
+    // Same embed responsive as Boostrap's embed-responsive, but with BEM style syntax
+    &-embed {
+        position: relative;
+        display: block;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        padding-bottom: 100%; //by default, it's a square
+        &__item,
+        iframe,
+        embed,
+        object,
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+        }
+		@responsive {
+			&--1by1 {
+				padding-bottom: 100%;
+			}
+			&--16by9 {
+				padding-bottom: 56.25%;
+			}
+			&--4by3 {
+				padding-bottom: 75%;
+			}
+		}
+    }
+    /* // {{ .u-table-responsive }} */
+    &-table-responsive {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+		// Prevent double border on horizontal scroll due to use of `display: block;`
+		>.table-bordered {
+			border: 0;
+		}
+    }
+    &-vertical-center {
+        @include vertical-center;
+        /* crit */
+    }
+    &-absolute-center {
+        @include absolute-center;
+        /* crit */
+    }
+    &-horizontal-center {
+        @include horizontal-center;
+        /* crit */
+	}
+
+	&-link-cover {
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	&-scrim {
+		&-grad{
+			background-image: linear-gradient(180deg, rgba(26, 39, 46, 0) 54.17%, rgba(26, 39, 46, 0.5) 100%),
+		}
+	}
+}
+
+@responsive {
+	.u-filter {
+		&-rounded-card {
+			filter: url('#rounded-card')
+		}
+	}
+	.u-clippath {
+		&-card {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90.625%);
+		}
+		&-hero {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 11.0552% 100%);
+		}
+		&-yourstory {
+			clip-path: polygon(0 0, 100% 0, 92.5373% 100%, 0 100%);
+		}
+	}
+}
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+
+    .safari\:u-clippath-card {
+
+        transform: scale(1.025);
+    }
+}}
+
+
+input.u-input-unstyled {
+	@include input-unstyled;
+}
+
+/* crit:end */
+.u-gradient-overlay {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+}
+
+// https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+// This to fix safari mobile's rounded corner with overflow child element issue
+.u-safari-overflowrounded-fix {
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+:root.theme-jobaccess .active.theme-jobaccess\:active\:bg-secondary-jobaccess-300 {
+	@apply bg-secondary-jobaccess-300;
+}
+:root.theme-entrepreneurs .active.theme-entrepreneurs\:active\:bg-secondary-entrepreneurs-300 {
+	@apply bg-secondary-entrepreneurs-300;
+}
+:root.theme-apprenticeship .active.theme-apprenticeship\:active\:bg-secondary-apprenticeship-300 {
+	@apply bg-secondary-apprenticeship-300;
+}
+:root.theme-healthdisability .active.theme-healthdisability\:active\:bg-secondary-healthdisability-300 {
+	@apply bg-secondary-healthdisability-300;
+}
+:root.theme-employers .active.theme-employers\:active\:bg-secondary-employers-300 {
+	@apply bg-secondary-employers-300;
+}
+:root.theme-learning .active.theme-learning\:active\:bg-secondary-learning-300 {
+	@apply bg-secondary-learning-300;
+}
+
+:root.theme-jobaccess .active.theme-jobaccess\:active\:bg-secondary-jobaccess-500 {
+	@apply bg-secondary-jobaccess-500;
+}
+:root.theme-entrepreneurs .active.theme-entrepreneurs\:active\:bg-secondary-entrepreneurs-500 {
+	@apply bg-secondary-entrepreneurs-500;
+}
+:root.theme-apprenticeship .active.theme-apprenticeship\:active\:bg-secondary-apprenticeship-500 {
+	@apply bg-secondary-apprenticeship-500;
+}
+:root.theme-healthdisability .active.theme-healthdisability\:active\:bg-secondary-healthdisability-500 {
+	@apply bg-secondary-healthdisability-500;
+}
+:root.theme-employers .active.theme-employers\:active\:bg-secondary-employers-500 {
+	@apply bg-secondary-employers-500;
+}
+:root.theme-learning .active.theme-learning\:active\:bg-secondary-learning-500 {
+	@apply bg-secondary-learning-500;
+}
+
+:root.theme-jobaccess .active.theme-jobaccess\:active\:text-secondary-jobaccess-700 {
+	@apply text-secondary-jobaccess-700;
+}
+:root.theme-entrepreneurs .active.theme-entrepreneurs\:active\:text-secondary-entrepreneurs-700 {
+	@apply text-secondary-entrepreneurs-700;
+}
+:root.theme-apprenticeship .active.theme-apprenticeship\:active\:text-secondary-apprenticeship-700 {
+	@apply text-secondary-apprenticeship-700;
+}
+:root.theme-healthdisability .active.theme-healthdisability\:active\:text-secondary-healthdisability-700 {
+	@apply text-secondary-healthdisability-700;
+}
+:root.theme-employers .active.theme-employers\:active\:text-secondary-employers-700 {
+	@apply text-secondary-employers-700;
+}
+:root.theme-learning .active.theme-learning\:active\:text-secondary-learning-700 {
+	@apply text-secondary-learning-700;
+}
